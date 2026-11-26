@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Dinu Kids Coding" />
+    <title>Dinu Kids Coding</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Welcome</p>
+        <h1>Dinu Kids Coding</h1>
+        <p class="hero-text">
+          Pick a coding world to explore. Both topics are now available from one link.
+        </p>
+        <button class="install-button" id="install-app" type="button" hidden>
+          Install App
+        </button>
+        <p class="offline-status" id="offline-status" role="status">
+          Available offline after the first visit.
+        </p>
+      </header>
+
+      <main class="main-content">
+        <section class="category-selector" aria-label="Coding categories">
+          <button class="category-card active" data-category="python">
+            <span class="icon">🐍</span>
+            <h2>Python</h2>
+            <p>Write real code with simple syntax and powerful ideas.</p>
+          </button>
+
+          <button class="category-card" data-category="block">
+            <span class="icon">🧩</span>
+            <h2>Block Coding</h2>
+            <p>Build logic visually with colorful blocks and fun projects.</p>
+          </button>
+        </section>
+
+        <section class="details-panel" id="details-panel" aria-live="polite">
+          <h3 id="topic-title">Python</h3>
+          <p id="topic-description"></p>
+          <ul id="topic-list"></ul>
+
+          <div class="practice-card">
+            <h4 id="challenge-title"></h4>
+            <p id="challenge-text"></p>
+
+            <div id="block-workspace" class="block-workspace hidden">
+              <div class="block-palette">
+                <div class="block" draggable="true" data-block="when-start">When Start</div>
+                <div class="block" draggable="true" data-block="say-hello">Say Hello</div>
+                <div class="block" draggable="true" data-block="repeat">Repeat 2 Times</div>
+                <div class="block" draggable="true" data-block="move">Move Forward</div>
+              </div>
+
+              <div class="drop-zone" id="drop-zone">
+                <p>Drop blocks here to build your program</p>
+              </div>
+            </div>
+
+            <label class="sr-only" for="code-input">Coding area</label>
+            <textarea id="code-input" spellcheck="false"></textarea>
+
+            <div class="actions">
+              <button id="run-code" type="button">Check my code</button>
+            </div>
+            <div id="feedback" class="feedback" role="status">Start typing your code...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
